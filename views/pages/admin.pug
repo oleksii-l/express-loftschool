@@ -14,7 +14,7 @@ block content
         .form-container
           form.form-skill(action='/admin/skills' method="POST")
             .form-title Счетчики
-            if (msgskill)
+            if (msgskill && msgskill.length)
               .status= msgskill
             label.form-skill__input-line 
               span.form-skill__input-title Возраст
@@ -30,9 +30,9 @@ block content
               input(name="years" type="number").form-skill__input
             .form__btns.form-skill__input-line
               button(type="submit").button Сохранить
-          form.form-upload(action='/admin/upload' method="POST" enctype="application/x-www-form-urlencoded")
+          form.form-upload(action='/admin/upload' method="POST" enctype="multipart/form-data")
             .form-title Добавить товар
-            if (msgfile)
+            if (msgfile && msgfile.length)
               .status= msgfile
             .form-upload__input-line
               .form-upload__wraper

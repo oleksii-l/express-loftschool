@@ -35,6 +35,7 @@ bower_components
 dist
 build
 public
+sessions
 
 # Node.JS
 node_modules

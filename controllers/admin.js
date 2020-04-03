@@ -1,4 +1,5 @@
 const db = require("../db");
+const path = require("path");
 const sgMail = require("@sendgrid/mail");
 require("dotenv").config({ path: __dirname + "/.env" });
 
@@ -54,5 +55,15 @@ exports.saveSkills = ({ age, concerts, cities, years }) => {
         text: "Лет на сцене в качестве скрипача"
       }
     ])
+    .write();
+};
+
+exports.saveProduct = ({ name, price, file }) => {
+  db.get("products")
+    .push({
+      src: path.join(".", "images", "products", file),
+      name,
+      price
+    })
     .write();
 };
