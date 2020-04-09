@@ -104,10 +104,11 @@ router.post("/admin/upload", function(req, res, next) {
           res.flash("productMessage", err);
           console.error(err);
         }
+
+        res.redirect("/admin");
       });
     }
 
-    res.redirect("/admin");
   });
 });
 
