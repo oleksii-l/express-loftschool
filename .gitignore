@@ -34,8 +34,10 @@ Thumbs.db
 bower_components
 dist
 build
-public
+sessions
 
 # Node.JS
 node_modules
 npm-debug.log
+sendgrid.env
+.env
